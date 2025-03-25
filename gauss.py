@@ -1,7 +1,5 @@
 import numpy as np
 
-MAXN = 100
-
 
 def partial_pivot(A, n):
     for i in range(n):
@@ -26,7 +24,7 @@ def back_substitute(A, n):
         sum_val = sum(A[i][j] * x[j] for j in range(i + 1, n))
 
         x[i] = (A[i][n] - sum_val) / A[i][i]
-    return x
+    return x.round(2)
 
 
 if __name__ == "__main__":
